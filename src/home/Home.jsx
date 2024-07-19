@@ -1,12 +1,11 @@
 import Header from "@/components/custom/Header";
 import { Button } from "@/components/ui/button";
+import { useUser } from "@clerk/clerk-react";
 import { ArrowRight, AtomIcon, Edit, Share2, Video } from "lucide-react";
 import React from "react";
-import youtube from "../../public/youtube-123.png";
-import twitter from "../../public/twitter-x-logo-black-round.png";
-import reddit from "../../public/reddit-logo.png";
 
 function Home() {
+  const user = useUser()
   return (
     <div>
       <Header />
@@ -21,10 +20,14 @@ function Home() {
             </p>
           </div>
           <div className="flex gap-4 justify-center items-center my-4">
+            <Link to = { user.isSignedIn
+                  ? "https://ai-resume-builder-mu.vercel.app/dashboard" 
+                  : "https://ai-resume-builder-mu.vercel.app/auth/sign-in"}>
             <Button className="py-6 px-4 flex gap-2 bg-violet-600 hover:bg-violet-500">
               Get Started
               <ArrowRight />
             </Button>
+              </Link>
             <Button
               variant="outline"
               className="py-6 px-4 border border-gray-400 flex gap-2"
@@ -204,12 +207,14 @@ function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <a
-              href="/auth/sign-in"
+            <Link
+              to = { user.isSignedIn
+                  ? "https://ai-resume-builder-mu.vercel.app/dashboard" 
+                  : "https://ai-resume-builder-mu.vercel.app/auth/sign-in"}>
               className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Get Started Today
-            </a>
+            </Link>
           </div>
         </section>
       </div>
