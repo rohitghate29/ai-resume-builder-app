@@ -34,7 +34,7 @@ function Home() {
               className="py-6 px-4 border border-gray-400 flex gap-2"
             >
               <Video />
-              Know More
+              How It Works?
             </Button>
           </div>
           <div className="mt-10">
