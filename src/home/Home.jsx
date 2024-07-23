@@ -6,18 +6,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
-
-  const howItWorks = () => {
-    document.addEventListener('DOMContentLoaded', (event) => {
-            const targetSection = document.getElementById('how-it-works');
-            const topPosition = targetSection.offsetTop;
-            window.scrollTo({
-                top: topPosition,
-                behavior: 'smooth'
-            });
-        });
-    console.log("Clicked howitworks");
-  }
+  
+  useEffect(() => {
+    const targetSection = document.getElementById('how-it-works');
+    if (targetSection) {
+      const topPosition = targetSection.offsetTop;
+      window.scrollTo({
+        top: topPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, [])
   
   const user = useUser()
   return (
@@ -45,7 +44,16 @@ function Home() {
             <Button
               variant="outline"
               className="py-6 px-4 border border-gray-400 flex gap-2"
-              onClick={() => howItWorks()}
+              onClick={() => {
+                const targetSection = document.getElementById('how-it-works');
+                if (targetSection) {
+                  const topPosition = targetSection.offsetTop;
+                  window.scrollTo({
+                    top: topPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
             >
               <Video />
               How It Works?
