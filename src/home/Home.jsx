@@ -16,6 +16,7 @@ function Home() {
                 behavior: 'smooth'
             });
         });
+    console.log("Clicked howitworks");
   }
   
   const user = useUser()
