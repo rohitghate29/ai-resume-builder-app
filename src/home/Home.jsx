@@ -2,7 +2,7 @@ import Header from "@/components/custom/Header";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/clerk-react";
 import { ArrowRight, AtomIcon, Edit, Share2, Video } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
