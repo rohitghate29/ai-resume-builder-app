@@ -6,18 +6,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
-  
-  useEffect(() => {
-    const targetSection = document.getElementById('how-it-works');
-    if (targetSection) {
-      const topPosition = targetSection.offsetTop;
-      window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth'
-      });
-    }
-  }, [])
-  
   const user = useUser()
   return (
     <div>
