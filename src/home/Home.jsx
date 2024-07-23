@@ -6,6 +6,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
+
+  const howItWorks = () => {
+    document.addEventListener('DOMContentLoaded', (event) => {
+            const targetSection = document.getElementById('how-it-works');
+            const topPosition = targetSection.offsetTop;
+            window.scrollTo({
+                top: topPosition,
+                behavior: 'smooth'
+            });
+        });
+  }
+  
   const user = useUser()
   return (
     <div>
@@ -32,6 +44,7 @@ function Home() {
             <Button
               variant="outline"
               className="py-6 px-4 border border-gray-400 flex gap-2"
+              onClick={() => howItWorks()}
             >
               <Video />
               How It Works?
@@ -146,7 +159,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="py-8 bg-white z-50 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <section id="how-it-works" className="py-8 bg-white z-50 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
           <h2 className="font-bold text-3xl">How it Works?</h2>
           <h2 className="text-md text-gray-500">
             Give mock interview in just 3 simplar easy step
