@@ -10,6 +10,7 @@ function App() {
   if (!isSignedIn && isLoaded) {
     return <Navigate to={"/auth/sign-in"} />;
   }
+  console.log("is signed in: ",isSignedIn);
   return (
     <>
       <Header />
