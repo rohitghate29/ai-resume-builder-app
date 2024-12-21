@@ -9,8 +9,6 @@ function App() {
 
   if (!isSignedIn && isLoaded) {
     return <Navigate to={"/auth/sign-in"} />;
-  } else if(isSignedIn){
-    <Navigate to={"/dashboard"};
   }
   return (
     <>
