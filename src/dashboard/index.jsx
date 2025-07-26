@@ -28,7 +28,7 @@ function Dashboard() {
       <p>Start creating your AI Resume for your next job role.</p>
       <div className="py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         <AddResume />
-        {resumeList.length > 0 &&
+        {resumeList && resumeList.length > 0 &&
           resumeList.map((resume, index) => (
             <ResumeCard resume={resume} key={index} refreshData={getResumeList} />
           ))}
