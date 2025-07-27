@@ -15,15 +15,11 @@ function SkillPreview({ resumeInfo }) {
         {resumeInfo?.skills?.map((skill, i) => (
           <div key={i} className="flex items-center justify-between px-10">
             <h2 className="text-xs font-medium">{skill?.name}</h2>
-            <div className="h-2 bg-gray-200 w-[120px]" key={i}>
-              <div
-                className="h-2 "
-                style={{
-                  backgroundColor: resumeInfo?.themeColor || "black",
-                  width: skill?.rating * 20 + "%",
-                }}
-                key={i}
-              ></div>
+            <div className="h-2 w-[120px] border-2 border-black bg-white">
+              <div 
+                className="h-full border border-black bg-black" 
+                style={{ width: skill?.rating * 20 + "%" }}
+              />
             </div>
           </div>
         ))}
